@@ -1,0 +1,14 @@
+D:\csharp\RubiksCube\RubiksCube\bin\Debug\net7.0\RubiksCube.exe
+D:\csharp\RubiksCube\RubiksCube\bin\Debug\net7.0\RubiksCube.deps.json
+D:\csharp\RubiksCube\RubiksCube\bin\Debug\net7.0\RubiksCube.runtimeconfig.json
+D:\csharp\RubiksCube\RubiksCube\bin\Debug\net7.0\RubiksCube.dll
+D:\csharp\RubiksCube\RubiksCube\bin\Debug\net7.0\RubiksCube.pdb
+D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\RubiksCube.GeneratedMSBuildEditorConfig.editorconfig
+D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\RubiksCube.AssemblyInfoInputs.cache
+D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\RubiksCube.AssemblyInfo.cs
+D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\RubiksCube.csproj.CoreCompileInputs.cache
+D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\RubiksCube.dll
+D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\refint\RubiksCube.dll
+D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\RubiksCube.pdb
+D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\RubiksCube.genruntimeconfig.cache
+D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\ref\RubiksCube.dll
