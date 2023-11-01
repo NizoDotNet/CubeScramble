@@ -1,88 +1,90 @@
 ﻿using RubiksCube;
 
 
-string[] scramble = new[] {"U2", "R'", "D2", "L2", "U2"};
+string sc = "B2 R F2 R2 D2 L2 D2 L U2 F2 L2 U' R2 D' R B' U F2 R' F' L";
+string[] scramble = sc.Split(" ");
 Cube2 cube = new Cube2();
 CubeRender render = new(cube);
 
-foreach (var item in scramble)
+
+foreach (var s in scramble)
 {
-    if(item.Length > 1)
+    bool reverse = false;
+    bool doubleTurn = false;
+    if (s[0] == 'U')
     {
-        bool reverse = item[1] == '\'';
-        if (item[0] == 'U')
-        {
-            if (reverse)
-                cube.TurnReverseU();
-            else
-            {
-                cube.TurnU();
-                cube.TurnU();
-            }
-        }
-        else if (item[0] == 'R')
-        {
-            if (reverse)
-                cube.TurnReverseR();
-            else
-            {
-                cube.TurnR();
-
-                cube.TurnR();
-            }
-        }
-        else if (item[0] == 'L')
-        {
-            if (reverse)
-                cube.TurnReverseL();
-            else
-            {
-                cube.TurnL();
-                cube.TurnL();
-
-            }
-        }
-        else if (item[0] == 'D')
-        {
-            if (reverse)
-                cube.TurnReverseD();
-            else
-            {
-                cube.TurnD();
-                cube.TurnD();
-
-            }
-        }
-        /*else if (item[0] == 'B')
-        {
-            if (reverse)
-                cube.TurnReverseB();
-            else
-                cube.TurnB();
-        }*/
-    }
-    else
-    {
-        if (item == "U")
+        if(s.Length == 2 && s[1] == '\'') reverse = true;
+        else if(s.Length == 2 && s[1] == '2') doubleTurn = true; 
+        if(doubleTurn)
         {
             cube.TurnU();
+            cube.TurnU();
+            continue;
         }
-        else if (item == "R")
-        {
-           cube.TurnR();
-        }
-        else if (item == "L")
-        {
-           cube.TurnL();
-        }
-        else if (item == "D")
-        {
-           cube.TurnD();
-        }
+        cube.TurnU(reverse);
     }
-
+    else if (s[0] == 'R')
+    {
+        if (s.Length == 2 && s[1] == '\'') reverse = true;
+        else if (s.Length == 2 && s[1] == '2') doubleTurn = true;
+        if (doubleTurn)
+        {
+            cube.TurnR();
+            cube.TurnR();
+            continue;
+        }
+        cube.TurnR(reverse);
+    }
+    else if (s[0] == 'L')
+    {
+        if (s.Length == 2 && s[1] == '\'') reverse = true;
+        else if (s.Length == 2 && s[1] == '2') doubleTurn = true;
+        if (doubleTurn)
+        {
+            cube.TurnL();
+            cube.TurnL();
+            continue;
+        }
+        cube.TurnL(reverse);
+    }
+    else if (s[0] == 'D')
+    {
+        if (s.Length == 2 && s[1] == '\'') reverse = true;
+        else if (s.Length == 2 && s[1] == '2') doubleTurn = true;
+        if (doubleTurn)
+        {
+            cube.TurnD();
+            cube.TurnD();
+            continue;
+        }
+        cube.TurnD(reverse);
+    }
+    else if (s[0] == 'F')
+    {
+        if (s.Length == 2 && s[1] == '\'') reverse = true;
+        else if (s.Length == 2 && s[1] == '2') doubleTurn = true;
+        if (doubleTurn)
+        {
+            cube.TurnF();
+            cube.TurnF();
+            continue;
+        }
+        cube.TurnF(reverse);
+    }
+    else if (s[0] == 'B')
+    {
+        if (s.Length == 2 && s[1] == '\'') reverse = true;
+        else if (s.Length == 2 && s[1] == '2') doubleTurn = true;
+        if (doubleTurn)
+        {
+            cube.TurnB();
+            cube.TurnB();
+            continue;
+        }
+        cube.TurnB(reverse);
+    }
 }
 
-
-
 render.Render();
+Console.WriteLine("End");
+Console.ReadLine();
