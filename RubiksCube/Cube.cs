@@ -8,6 +8,7 @@ namespace RubiksCube
 {
     internal class Cube
     {
+        private const int TEMP_LENGTH = 3;
         public char[][] WhiteSide { get; set; }
         public char[][] YellowSide { get; set; }
         public char[][] GreenSide { get; set; }
@@ -16,7 +17,7 @@ namespace RubiksCube
         public char[][] OrangeSide { get; set; }
         public Cube()
         {
-            WhiteSide = new char[3][] { new char[] {'w','w','w'}, new char[] { 'w', 'w', 'w' }, new char[] { 'w', 'w', 'w' } };
+            WhiteSide = new char[3][] { new char[] { 'w', 'w', 'w' }, new char[] { 'w', 'w', 'w' }, new char[] { 'w', 'w', 'w' } };
             YellowSide = new char[3][] { new char[] { 'y', 'y', 'y' }, new char[] { 'y', 'y', 'y' }, new char[] { 'y', 'y', 'y' } };
             GreenSide = new char[3][] { new char[] { 'g', 'g', 'g' }, new char[] { 'g', 'g', 'g' }, new char[] { 'g', 'g', 'g' } };
             BlueSide = new char[3][] { new char[] { 'b', 'b', 'b' }, new char[] { 'b', 'b', 'b' }, new char[] { 'b', 'b', 'b' } };
@@ -24,99 +25,340 @@ namespace RubiksCube
             OrangeSide = new char[3][] { new char[] { 'o', 'o', 'o' }, new char[] { 'o', 'o', 'o' }, new char[] { 'o', 'o', 'o' } };
         }
 
-        
+        public void TurnU(bool reverse = false)
+        {
+            char[] upperTemp1 = new char[TEMP_LENGTH], upperTemp2 = new char[TEMP_LENGTH], 
+                upperTemp3 = new char[TEMP_LENGTH], upperTemp4 = new char[TEMP_LENGTH];
 
-        //public void TurnUReverse()
-        //{
-        //    char[] tempGreen = { GreenSide[0][0], GreenSide[0][1], GreenSide[0][2] },
-        //        tempOrange = { OrangeSide[2][2], OrangeSide[1][2], OrangeSide[0][2] },
-        //        tempBlue = { BlueSide[2][0], BlueSide[2][1], BlueSide[2][2] },
-        //        tempRed = { RedSide[2][0], RedSide[1][0], RedSide[0][0] };
+            char[] greenTemp = new char[TEMP_LENGTH], orangeTemp = new char[TEMP_LENGTH],
+                blueTemp = new char[TEMP_LENGTH], redTemp = new char[TEMP_LENGTH];
+            
+            for(int i = 0; i < TEMP_LENGTH; i++) 
+            {
+                upperTemp1[i] =  WhiteSide[0][i];
+                upperTemp2[i] = WhiteSide[i][2];
+                upperTemp3[i] = WhiteSide[2][i];
+                upperTemp4[i] = WhiteSide[i][0];
 
-        //    for (int i = 0; i < 3; i++)
-        //    {
-        //        BlueSide[2][i] = tempRed[i];
-        //        RedSide[i][0] = tempGreen[i];
-        //        GreenSide[0][i] = tempOrange[i];
-        //        OrangeSide[i][2] = tempBlue[i];
-        //    }
-
-        //}
-        //public void TurnD()
-        //{
-        //    char[] tempGreen = { GreenSide[2][0], GreenSide[2][1], GreenSide[2][2] }, 
-        //        tempOrange = { OrangeSide[0][0], OrangeSide[1][0], OrangeSide[2][0] },
-        //        tempBlue = { BlueSide[0][0], BlueSide[0][1], BlueSide[0][2] }, 
-        //        tempRed = { RedSide[0][2], RedSide[1][2], RedSide[2][2] };
-        //    for (int i = 0; i < 3; i++)
-        //    {
-        //        BlueSide[0][i] = tempRed[i];
-        //        RedSide[i][2] = tempGreen[i];
-        //        GreenSide[2][i] = tempOrange[i];
-        //        OrangeSide[i][0] = tempBlue[i];
-        //    }
-        //}
-
-        //public void TurnDReverse()
-        //{
-        //    char[] tempGreen = { GreenSide[2][0], GreenSide[2][1], GreenSide[2][2] },
-        //        tempOrange = { OrangeSide[0][0], OrangeSide[1][0], OrangeSide[2][0] },
-        //        tempBlue = { BlueSide[0][0], BlueSide[0][1], BlueSide[0][2] },
-        //        tempRed = { RedSide[0][2], RedSide[1][2], RedSide[2][2] };
-        //    for (int i = 0; i < 3; i++)
-        //    {
-        //        GreenSide[2][i] = tempRed[i];
-        //        OrangeSide[i][0] = tempGreen[i];
-        //        BlueSide[0][i] = tempOrange[i];
-        //        RedSide[i][2] = tempBlue[i];
-        //    }
-        //}
-
-        
-        //public void TurnRReverse()
-        //{
-        //    char[] tempGreen = { GreenSide[0][2], GreenSide[1][2], GreenSide[2][2] },
-        //        tempWhite = { WhiteSide[0][2], WhiteSide[1][2], WhiteSide[2][2] },
-        //        tempBlue = { BlueSide[0][2], BlueSide[1][2], BlueSide[2][2] },
-        //        tempYellow = { YellowSide[0][0], YellowSide[1][0], YellowSide[2][0] };
-        //    for (int i = 0; i < 3; i++)
-        //    {
-        //        BlueSide[i][2] = tempYellow[i];
-        //        YellowSide[i][0] = tempGreen[i];
-        //        GreenSide[i][2] = tempWhite[i];
-        //        WhiteSide[i][2] = tempBlue[i];
-        //    }
-        //}
-        //public void TurnL()
-        //{
-        //    char[] tempGreen = { GreenSide[0][0], GreenSide[1][0], GreenSide[2][0] },
-        //        tempWhite = { WhiteSide[0][0], WhiteSide[1][0], WhiteSide[2][0] },
-        //        tempBlue = { BlueSide[0][0], BlueSide[1][0], BlueSide[2][0] },
-        //        tempYellow = { YellowSide[0][2], YellowSide[1][2], YellowSide[2][2] };
-        //    for (int i = 0; i < 3; i++)
-        //    {
-        //        GreenSide[i][0] = tempWhite[i];
-        //        WhiteSide[i][0] = tempBlue[i];
-        //        BlueSide[i][0] = tempYellow[i];
-        //        YellowSide[i][2] = tempGreen[i];
-        //    }
-        //}
-
-        //public void TurnLReverse()
-        //{
-        //    char[] tempGreen = { GreenSide[0][0], GreenSide[1][0], GreenSide[2][0] },
-        //        tempWhite = { WhiteSide[0][0], WhiteSide[1][0], WhiteSide[2][0] },
-        //        tempBlue = { BlueSide[0][0], BlueSide[1][0], BlueSide[2][0] },
-        //        tempYellow = { YellowSide[0][2], YellowSide[1][2], YellowSide[2][2] };
-        //    for (int i = 0; i < 3; i++)
-        //    {
-        //        GreenSide[i][0] = tempYellow[i];
-        //        WhiteSide[i][0] = tempGreen[i];
-        //        BlueSide[i][0] = tempWhite[i];
-        //        YellowSide[i][2] = tempBlue[i];
-        //    }
-        //}
+                greenTemp[i] = GreenSide[0][i];
+                orangeTemp[i] = OrangeSide[0][i];
+                blueTemp[i] = BlueSide[0][i];
+                redTemp[i] = RedSide[0][i];
+            }
 
 
+            if(!reverse)
+            {
+                for (int i = 0; i < TEMP_LENGTH; i++)
+                {
+                    WhiteSide[0][i] = upperTemp4[TEMP_LENGTH - i - 1];
+                    WhiteSide[i][2] = upperTemp1[i];
+                    WhiteSide[2][i] = upperTemp2[TEMP_LENGTH - i - 1];
+                    WhiteSide[i][0] = upperTemp3[i];
+
+                    GreenSide[0][i] = redTemp[i];
+                    OrangeSide[0][i] = greenTemp[i];
+                    BlueSide[0][i] = orangeTemp[i];
+                    RedSide[0][i] = blueTemp[i];
+                }
+            }
+
+            else
+            {
+                for (int i = 0; i < TEMP_LENGTH; i++)
+                {
+                    WhiteSide[0][i] = upperTemp2[i];
+                    WhiteSide[i][0] = upperTemp1[TEMP_LENGTH - i - 1];
+                    WhiteSide[2][i] = upperTemp4[i];
+                    WhiteSide[i][2] = upperTemp3[TEMP_LENGTH - i - 1];
+
+                    GreenSide[0][i] = orangeTemp[i];
+                    OrangeSide[0][i] = blueTemp[i];
+                    BlueSide[0][i] = redTemp[i];
+                    RedSide[0][i] = greenTemp[i];
+                }
+            }
+            
+        }
+        public void TurnR(bool reverse = false)
+        {
+            char[] upperTemp1 = new char[TEMP_LENGTH],
+                upperTemp2 = new char[TEMP_LENGTH],
+                upperTemp3 = new char[TEMP_LENGTH],
+                upperTemp4 = new char[TEMP_LENGTH];
+
+            char[] greenTemp = new char[TEMP_LENGTH], 
+                whiteTemp = new char[TEMP_LENGTH], 
+                blueTemp = new char[TEMP_LENGTH], 
+                yellowTemp = new char[TEMP_LENGTH];
+            for(int i = 0; i < TEMP_LENGTH; i++)
+            {
+                upperTemp1[i] = RedSide[0][i];
+                upperTemp2[i] = RedSide[i][2];
+                upperTemp3[i] = RedSide[2][i];
+                upperTemp4[i] = RedSide[i][0];
+
+                greenTemp[i] = GreenSide[i][2];
+                yellowTemp[i] = YellowSide[i][2];
+                whiteTemp[i] = WhiteSide[i][2];
+                blueTemp[i] = BlueSide[i][0];
+            }
+
+            if(!reverse)
+            {
+                for (int i = 0; i < TEMP_LENGTH; i++)
+                {
+                    RedSide[0][i] = upperTemp4[TEMP_LENGTH - i - 1];
+                    RedSide[i][2] = upperTemp1[i];
+                    RedSide[2][i] = upperTemp2[TEMP_LENGTH - i - 1];
+                    RedSide[i][0] = upperTemp3[i];
+
+                    GreenSide[i][2] = yellowTemp[i];
+                    WhiteSide[i][2] = greenTemp[i];
+                    BlueSide[i][0] = whiteTemp[TEMP_LENGTH - i - 1];
+                    YellowSide[i][2] = blueTemp[TEMP_LENGTH - i - 1];
+                }
+            }
+            
+            else
+            {
+                for (int i = 0; i < TEMP_LENGTH; i++)
+                {
+                    RedSide[0][i] = upperTemp2[i];
+                    RedSide[i][2] = upperTemp3[TEMP_LENGTH - i - 1];
+                    RedSide[2][i] = upperTemp4[i];
+                    RedSide[i][0] = upperTemp1[TEMP_LENGTH - i - 1];
+
+                    GreenSide[i][2] = whiteTemp[i];
+                    WhiteSide[i][2] = blueTemp[TEMP_LENGTH - i - 1];
+                    BlueSide[i][0] = yellowTemp[TEMP_LENGTH - i - 1];
+                    YellowSide[i][2] = greenTemp[i];
+                }
+            }
+            
+        }
+        public void TurnD(bool reverse = false)
+        {
+            char[] upperTemp1 = new char[TEMP_LENGTH], upperTemp2 = new char[TEMP_LENGTH],
+               upperTemp3 = new char[TEMP_LENGTH], upperTemp4 = new char[TEMP_LENGTH];
+
+            char[] greenTemp = new char[TEMP_LENGTH], orangeTemp = new char[TEMP_LENGTH],
+                blueTemp = new char[TEMP_LENGTH], redTemp = new char[TEMP_LENGTH];
+
+            for (int i = 0; i < TEMP_LENGTH; i++)
+            {
+                upperTemp1[i] = YellowSide[0][i];
+                upperTemp2[i] = YellowSide[i][2];
+                upperTemp3[i] = YellowSide[2][i];
+                upperTemp4[i] = YellowSide[i][0];
+
+                greenTemp[i] = GreenSide[2][i];
+                orangeTemp[i] = OrangeSide[2][i];
+                blueTemp[i] = BlueSide[2][i];
+                redTemp[i] = RedSide[2][i];
+            }
+
+            if(!reverse)
+            {
+                for (int i = 0; i < TEMP_LENGTH; i++)
+                {
+                    YellowSide[0][i] = upperTemp4[TEMP_LENGTH - i - 1];
+                    YellowSide[i][2] = upperTemp1[i];
+                    YellowSide[2][i] = upperTemp2[TEMP_LENGTH - i - 1];
+                    YellowSide[i][0] = upperTemp3[i];
+
+                    GreenSide[2][i] = orangeTemp[i];
+                    OrangeSide[2][i] = blueTemp[i];
+                    BlueSide[2][i] = redTemp[i];
+                    RedSide[2][i] = greenTemp[i];
+                }
+            }
+            else
+            {
+                for (int i = 0; i < TEMP_LENGTH; i++)
+                {
+                    YellowSide[0][i] = upperTemp2[i];
+                    YellowSide[i][2] = upperTemp3[TEMP_LENGTH - i - 1];
+                    YellowSide[2][i] = upperTemp4[i];
+                    YellowSide[i][0] = upperTemp1[TEMP_LENGTH - i - 1];
+
+                    GreenSide[2][i] = redTemp[i];
+                    OrangeSide[2][i] = greenTemp[i];
+                    BlueSide[2][i] = orangeTemp[i];
+                    RedSide[2][i] = blueTemp[i];
+                }
+            }
+            
+        }
+    
+        public void TurnL(bool reverse = false)
+        {
+            char[] upperTemp1 = new char[TEMP_LENGTH],
+                upperTemp2 = new char[TEMP_LENGTH],
+                upperTemp3 = new char[TEMP_LENGTH],
+                upperTemp4 = new char[TEMP_LENGTH];
+
+            char[] greenTemp = new char[TEMP_LENGTH],
+                whiteTemp = new char[TEMP_LENGTH],
+                blueTemp = new char[TEMP_LENGTH],
+                yellowTemp = new char[TEMP_LENGTH];
+            for (int i = 0; i < TEMP_LENGTH; i++)
+            {
+                upperTemp1[i] = OrangeSide[0][i];
+                upperTemp2[i] = OrangeSide[i][2];
+                upperTemp3[i] = OrangeSide[2][i];
+                upperTemp4[i] = OrangeSide[i][0];
+
+                greenTemp[i] = GreenSide[i][0];
+                yellowTemp[i] = YellowSide[i][0];
+                whiteTemp[i] = WhiteSide[i][0];
+                blueTemp[i] = BlueSide[i][2];
+            }
+
+            if(!reverse)
+            {
+                for (int i = 0; i < TEMP_LENGTH; i++)
+                {
+                    OrangeSide[0][i] = upperTemp4[TEMP_LENGTH - i - 1];
+                    OrangeSide[i][2] = upperTemp1[i];
+                    OrangeSide[2][i] = upperTemp2[TEMP_LENGTH - i - 1];
+                    OrangeSide[i][0] = upperTemp3[i];
+
+                    GreenSide[i][0] = whiteTemp[i];
+                    WhiteSide[i][0] = blueTemp[TEMP_LENGTH - i - 1];
+                    BlueSide[i][2] = yellowTemp[TEMP_LENGTH - i - 1];
+                    YellowSide[i][0] = greenTemp[i];
+                }
+            }
+            else
+            {
+                for (int i = 0; i < TEMP_LENGTH; i++)
+                {
+                    OrangeSide[0][i] = upperTemp2[i];
+                    OrangeSide[i][2] = upperTemp3[TEMP_LENGTH - i - 1];
+                    OrangeSide[2][i] = upperTemp4[i];
+                    OrangeSide[i][0] = upperTemp1[TEMP_LENGTH - i - 1];
+
+                    GreenSide[i][0] = yellowTemp[i];
+                    WhiteSide[i][0] = greenTemp[i];
+                    BlueSide[i][2] = whiteTemp[TEMP_LENGTH - i - 1];
+                    YellowSide[i][0] = blueTemp[TEMP_LENGTH - i - 1];
+                }
+            }
+        }
+        public void TurnF(bool reverse = false)
+        {
+            char[] upperTemp1 = new char[TEMP_LENGTH],
+                upperTemp2 = new char[TEMP_LENGTH],
+                upperTemp3 = new char[TEMP_LENGTH],
+                upperTemp4 = new char[TEMP_LENGTH];
+
+            char[] whiteTemp = new char[TEMP_LENGTH], 
+                redTemp = new char[TEMP_LENGTH],
+                yellowTemp = new char[TEMP_LENGTH],
+                orangeTemp = new char[TEMP_LENGTH];
+            for (int i = 0; i < TEMP_LENGTH; i++)
+            {
+                upperTemp1[i] = GreenSide[0][i];
+                upperTemp2[i] = GreenSide[i][2];
+                upperTemp3[i] = GreenSide[2][i];
+                upperTemp4[i] = GreenSide[i][0];
+
+                whiteTemp[i] = WhiteSide[2][i];
+                redTemp[i] = RedSide[i][0];
+                yellowTemp[i] = YellowSide[0][i];
+                orangeTemp[i] = OrangeSide[i][2];
+
+            }
+
+            if(!reverse)
+            {
+                for (int i = 0; i < TEMP_LENGTH; i++)
+                {
+                    GreenSide[0][i] = upperTemp4[TEMP_LENGTH - i - 1];
+                    GreenSide[i][2] = upperTemp1[i];
+                    GreenSide[2][i] = upperTemp2[TEMP_LENGTH - i - 1];
+                    GreenSide[i][0] = upperTemp3[i];
+
+                    WhiteSide[2][i] = orangeTemp[TEMP_LENGTH - i - 1];
+                    RedSide[i][0] = whiteTemp[i];
+                    YellowSide[0][i] = redTemp[TEMP_LENGTH - i - 1];
+                    OrangeSide[i][2] = yellowTemp[i];
+                }
+            }
+            else
+            {
+                for (int i = 0; i < TEMP_LENGTH; i++)
+                {
+                    GreenSide[0][i] = upperTemp2[i];
+                    GreenSide[i][2] = upperTemp3[TEMP_LENGTH - i - 1];
+                    GreenSide[2][i] = upperTemp4[i];
+                    GreenSide[i][0] = upperTemp1[TEMP_LENGTH - i - 1];
+
+                    WhiteSide[2][i] = redTemp[i];
+                    RedSide[i][0] = yellowTemp[TEMP_LENGTH - i - 1];
+                    YellowSide[0][i] = orangeTemp[i];
+                    OrangeSide[i][2] = whiteTemp[TEMP_LENGTH - i - 1];
+                }
+            }
+            
+        }
+        public void TurnB(bool reverse = false)
+        {
+            char[] upperTemp1 = new char[TEMP_LENGTH],
+                upperTemp2 = new char[TEMP_LENGTH],
+                upperTemp3 = new char[TEMP_LENGTH],
+                upperTemp4 = new char[TEMP_LENGTH];
+
+            char[] whiteTemp = new char[TEMP_LENGTH],
+                redTemp = new char[TEMP_LENGTH],
+                yellowTemp = new char[TEMP_LENGTH],
+                orangeTemp = new char[TEMP_LENGTH];
+
+            for (int i = 0; i < TEMP_LENGTH; i++)
+            {
+                upperTemp1[i] = BlueSide[0][i];
+                upperTemp2[i] = BlueSide[i][2];
+                upperTemp3[i] = BlueSide[2][i];
+                upperTemp4[i] = BlueSide[i][0];
+
+                whiteTemp[i] = WhiteSide[0][i];
+                redTemp[i] = RedSide[i][2];
+                yellowTemp[i] = YellowSide[2][i];
+                orangeTemp[i] = OrangeSide[i][0];
+            }
+
+            if(!reverse)
+            {
+                for (int i = 0; i < TEMP_LENGTH; i++)
+                {
+                    BlueSide[0][i] = upperTemp4[TEMP_LENGTH - i - 1];
+                    BlueSide[i][2] = upperTemp1[i];
+                    BlueSide[2][i] = upperTemp2[TEMP_LENGTH - i - 1];
+                    BlueSide[i][0] = upperTemp3[i];
+
+                    WhiteSide[0][i] = redTemp[i];
+                    OrangeSide[i][0] = whiteTemp[TEMP_LENGTH - i - 1];
+                    YellowSide[2][i] = orangeTemp[i];
+                    RedSide[i][2] = yellowTemp[TEMP_LENGTH - i - 1];
+                }
+            }
+            else
+            {
+                for (int i = 0; i < TEMP_LENGTH; i++)
+                {
+                    BlueSide[0][i] = upperTemp2[i];
+                    BlueSide[i][2] = upperTemp3[TEMP_LENGTH - i - 1];
+                    BlueSide[2][i] = upperTemp4[i];
+                    BlueSide[i][0] = upperTemp1[TEMP_LENGTH - i - 1];
+
+                    WhiteSide[0][i] = orangeTemp[TEMP_LENGTH - i - 1];
+                    OrangeSide[i][0] = yellowTemp[i];
+                    YellowSide[2][i] = redTemp[TEMP_LENGTH - i - 1];
+                    RedSide[i][2] = whiteTemp[i];
+                }
+            }
+            
+        }
     }
 }
