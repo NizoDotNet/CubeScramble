@@ -1,12 +1,19 @@
 ﻿using RubiksCube;
 
 
-string sc = Console.ReadLine();
-string[] scramble = sc.Split(" ");
+
+ScrambleGenerator generator = new();
+
+var res = generator.GenerateScramble(20);
+
 Cube cube = new();
 CubeRender render = new(cube);
 Scrambler scrambler = new(cube);
-
-scrambler.Scramble(sc);
+scrambler.Scramble(res);
 render.Render();
-Console.WriteLine("End");
+Console.WriteLine();
+foreach (var item in res)
+{
+    Console.Write($"{item} ");   
+}
+Console.ReadKey();

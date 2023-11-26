@@ -12,3 +12,4 @@ D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\refint\RubiksCube.dll
 D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\RubiksCube.pdb
 D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\RubiksCube.genruntimeconfig.cache
 D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\ref\RubiksCube.dll
+D:\csharp\RubiksCube\RubiksCube\obj\Debug\net7.0\RubiksCube.sourcelink.json

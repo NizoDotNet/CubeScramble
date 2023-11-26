@@ -9,10 +9,11 @@ namespace RubiksCube
     internal class Scrambler
     {
         private readonly Cube cube;
-
+        private CubeRender cubeRender;
         public Scrambler(Cube cube)
         {
             this.cube = cube;
+            cubeRender = new(cube);
         }
 
         public void Scramble(string[] scramble)
@@ -98,7 +99,7 @@ namespace RubiksCube
 
         public void Scramble(string sc)
         {
-            string[] scramble = sc.Split(" ");
+            string[] scramble = sc.Split();
             Scramble(scramble);
         }
     }

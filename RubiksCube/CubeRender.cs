@@ -32,8 +32,6 @@ namespace RubiksCube
                     WriteAt(cube.RedSide[i][j], CHARACTER_DIF * (6 + j), 3 + i);
                     WriteAt(cube.BlueSide[i][j], CHARACTER_DIF * (9 + j), 3 + i);
                     WriteAt(cube.YellowSide[i][j], CHARACTER_DIF * (3 + j), 6 + i);
-
-
                 }
             }
             Console.ForegroundColor = currentColor;
