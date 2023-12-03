@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\RubiksCube.RazorPages.props" />
+</Project>

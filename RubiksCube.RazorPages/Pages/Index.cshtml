@@ -1,0 +1,89 @@
+﻿@page
+@using System.Security.Claims
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<link rel="stylesheet" href="~/css/scramble.css">
+<div class="text-center container">
+    <h2 class="scramble text-center"></h2>
+    <span style="font-size:90px" id="a">0.000</span>
+    <!--This is cube :))-->
+    <div class="cube-container justify-content-center">
+        <div class="cube cube1" id="whside">
+            <div style="background-color: white;"></div>
+            <div style="background-color: white;"></div>
+            <div style="background-color: white;"></div>
+            <div style="background-color: white;"></div>
+            <div style="background-color: white;"></div>
+            <div style="background-color: white;"></div>
+            <div style="background-color: white;"></div>
+            <div style="background-color: white;"></div>
+            <div style="background-color: white;"></div>
+        </div>
+        <div class="cube cube2" id="orside">
+            <div style="background-color: orange;"></div>
+            <div style="background-color: orange;"></div>
+            <div style="background-color: orange;"></div>
+            <div style="background-color: orange;"></div>
+            <div style="background-color: orange;"></div>
+            <div style="background-color: orange;"></div>
+            <div style="background-color: orange;"></div>
+            <div style="background-color: orange;"></div>
+            <div style="background-color: orange;"></div>
+        </div>
+        <div class="cube cube3" id="grside">
+            <div style="background-color: green;"></div>
+            <div style="background-color: green;"></div>
+            <div style="background-color: green;"></div>
+            <div style="background-color: green;"></div>
+            <div style="background-color: green;"></div>
+            <div style="background-color: green;"></div>
+            <div style="background-color: green;"></div>
+            <div style="background-color: green;"></div>
+            <div style="background-color: green;"></div>
+        </div>
+        <div class="cube cube4" id="redside">
+            <div style="background-color: red;"></div>
+            <div style="background-color: red;"></div>
+            <div style="background-color: red;"></div>
+            <div style="background-color: red;"></div>
+            <div style="background-color: red;"></div>
+            <div style="background-color: red;"></div>
+            <div style="background-color: red;"></div>
+            <div style="background-color: red;"></div>
+            <div style="background-color: red;"></div>
+        </div>
+        <div class="cube cube5" id="blside">
+            <div style="background-color: blue;"></div>
+            <div style="background-color: blue;"></div>
+            <div style="background-color: blue;"></div>
+            <div style="background-color: blue;"></div>
+            <div style="background-color: blue;"></div>
+            <div style="background-color: blue;"></div>
+            <div style="background-color: blue;"></div>
+            <div style="background-color: blue;"></div>
+            <div style="background-color: blue;"></div>
+        </div>
+        <div class="cube cube6" id="ylside">
+            <div style="background-color: yellow;"></div>
+            <div style="background-color: yellow;"></div>
+            <div style="background-color: yellow;"></div>
+            <div style="background-color: yellow;"></div>
+            <div style="background-color: yellow;"></div>
+            <div style="background-color: yellow;"></div>
+            <div style="background-color: yellow;"></div>
+            <div style="background-color: yellow;"></div>
+            <div style="background-color: yellow;"></div>
+        </div>
+    </div>    
+    
+</div>
+
+
+@section Scripts{
+    <script src="~/js/ScrambleService.js">
+       
+    </script>
+}
