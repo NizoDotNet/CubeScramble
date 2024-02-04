@@ -70,6 +70,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlTb2x2ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/csharp/RubiksCube/RubiksCube.RazorPages/Pages/MySolves/SolveInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlTb2x2ZXNcU29sdmVJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/csharp/RubiksCube/RubiksCube.RazorPages/Pages/MySolves/TestPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlTb2x2ZXNcVGVzdFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/csharp/RubiksCube/RubiksCube.RazorPages/Pages/MySolves/_CubePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlTb2x2ZXNcX0N1YmVQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/csharp/RubiksCube/RubiksCube.RazorPages/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -80,10 +92,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/csharp/RubiksCube/RubiksCube.RazorPages/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/csharp/RubiksCube/RubiksCube.RazorPages/Pages/_CubePartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0N1YmVQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/csharp/RubiksCube/RubiksCube.RazorPages/Pages/_ViewImports.cshtml]

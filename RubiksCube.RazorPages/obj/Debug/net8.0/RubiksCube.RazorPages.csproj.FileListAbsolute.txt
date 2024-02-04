@@ -260,3 +260,4 @@ D:\csharp\RubiksCube\RubiksCube.RazorPages\bin\Debug\net8.0\runtimes\win-x86\nat
 D:\csharp\RubiksCube\RubiksCube.RazorPages\obj\Debug\net8.0\RubiksCube.RazorPages.MvcApplicationPartsAssemblyInfo.cs
 D:\csharp\RubiksCube\RubiksCube.RazorPages\bin\Debug\net8.0\AutoMapper.dll
 D:\csharp\RubiksCube\RubiksCube.RazorPages\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\csharp\RubiksCube\RubiksCube.RazorPages\bin\Debug\net8.0\pagesettings.json

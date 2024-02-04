@@ -20,10 +20,6 @@ namespace RubiksCube.RazorPages.Pages.MySolves
             Scrambles = repository.GetScrambles();
         }
 
-        public IActionResult OnGetCubepartial()
-        {
-            string sc = @"{test: 'TEST'}";
-            return Partial("_CubePartial", sc);
-        }
+        
     }
 }

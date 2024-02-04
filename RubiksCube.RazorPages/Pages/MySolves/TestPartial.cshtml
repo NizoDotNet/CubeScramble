@@ -1,0 +1,16 @@
+﻿@page "{handler?}"
+@model RubiksCube.RazorPages.Pages.MySolves.TestPartialModel
+
+<div class="text-center container">
+    <h2 class="scramble text-center"></h2>
+    <span style="font-size:90px" id="a">0.000</span>
+    <!--This is cube :))-->
+    <div class="my-cube"></div>
+    
+
+</div>
+
+
+@section Scripts {
+    <script src="~/js/ScrambleService.js"></script>
+}

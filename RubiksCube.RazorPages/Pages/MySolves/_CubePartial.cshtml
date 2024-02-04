@@ -1,0 +1,122 @@
+﻿@model string
+
+<input type="hidden" id="cube" value="@Model"/>
+
+<div class="cube-container justify-content-center">
+    <div class="cube cube1" id="whside">
+        <div style="background-color: white;"></div>
+        <div style="background-color: white;"></div>
+        <div style="background-color: white;"></div>
+        <div style="background-color: white;"></div>
+        <div style="background-color: white;"></div>
+        <div style="background-color: white;"></div>
+        <div style="background-color: white;"></div>
+        <div style="background-color: white;"></div>
+        <div style="background-color: white;"></div>
+    </div>
+    <div class="cube cube2" id="orside">
+        <div style="background-color: orange;"></div>
+        <div style="background-color: orange;"></div>
+        <div style="background-color: orange;"></div>
+        <div style="background-color: orange;"></div>
+        <div style="background-color: orange;"></div>
+        <div style="background-color: orange;"></div>
+        <div style="background-color: orange;"></div>
+        <div style="background-color: orange;"></div>
+        <div style="background-color: orange;"></div>
+    </div>
+    <div class="cube cube3" id="grside">
+        <div style="background-color: green;"></div>
+        <div style="background-color: green;"></div>
+        <div style="background-color: green;"></div>
+        <div style="background-color: green;"></div>
+        <div style="background-color: green;"></div>
+        <div style="background-color: green;"></div>
+        <div style="background-color: green;"></div>
+        <div style="background-color: green;"></div>
+        <div style="background-color: green;"></div>
+    </div>
+    <div class="cube cube4" id="redside">
+        <div style="background-color: red;"></div>
+        <div style="background-color: red;"></div>
+        <div style="background-color: red;"></div>
+        <div style="background-color: red;"></div>
+        <div style="background-color: red;"></div>
+        <div style="background-color: red;"></div>
+        <div style="background-color: red;"></div>
+        <div style="background-color: red;"></div>
+        <div style="background-color: red;"></div>
+    </div>
+    <div class="cube cube5" id="blside">
+        <div style="background-color: blue;"></div>
+        <div style="background-color: blue;"></div>
+        <div style="background-color: blue;"></div>
+        <div style="background-color: blue;"></div>
+        <div style="background-color: blue;"></div>
+        <div style="background-color: blue;"></div>
+        <div style="background-color: blue;"></div>
+        <div style="background-color: blue;"></div>
+        <div style="background-color: blue;"></div>
+    </div>
+    <div class="cube cube6" id="ylside">
+        <div style="background-color: yellow;"></div>
+        <div style="background-color: yellow;"></div>
+        <div style="background-color: yellow;"></div>
+        <div style="background-color: yellow;"></div>
+        <div style="background-color: yellow;"></div>
+        <div style="background-color: yellow;"></div>
+        <div style="background-color: yellow;"></div>
+        <div style="background-color: yellow;"></div>
+        <div style="background-color: yellow;"></div>
+    </div>
+</div>
+
+
+
+<script>
+    function ShowScrambleFromText(cubeText) {
+        const cubeJson = JSON.parse(cubeText);
+        console.log("i am helping");
+        console.log(cubeJson);
+        whside.innerHTML = "";
+        orside.innerHTML = "";
+        grside.innerHTML = "";
+        redside.innerHTML = "";
+        blside.innerHTML = "";
+        ylside.innerHTML = "";
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                let color = GetColor(cubeJson.whiteSide[i][j]);
+                console.log(color)
+                whside.innerHTML += `<div style="background-color: ${color};"></div>`
+                color = GetColor(cubeJson.orangeSide[i][j]);
+                orside.innerHTML += `<div style="background-color: ${color};"></div>`
+                color = GetColor(cubeJson.greenSide[i][j]);
+                grside.innerHTML += `<div style="background-color: ${color};"></div>`
+                color = GetColor(cubeJson.redSide[i][j]);
+                redside.innerHTML += `<div style="background-color: ${color};"></div>`
+                color = GetColor(cubeJson.blueSide[i][j]);
+                blside.innerHTML += `<div style="background-color: ${color};"></div>`
+                color = GetColor(cubeJson.yellowSide[i][j]);
+                ylside.innerHTML += `<div style="background-color: ${color};"></div>`
+            }
+        }
+    }
+    function GetColor(c) {
+        switch (c) {
+            case 'w':
+                return 'white';
+            case 'y':
+                return 'yellow';
+            case 'g':
+                return 'green';
+            case 'b':
+                return 'blue';
+            case 'r':
+                return 'red';
+            case 'o':
+                return 'orange';
+        }
+    }
+    ShowScrambleFromText(cube.value);
+</script>

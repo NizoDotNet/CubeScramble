@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\js\\ScrambleService.js"
     },
     {
+      "Id": "D:\\csharp\\RubiksCube\\RubiksCube.RazorPages\\wwwroot\\js\\TestPartial.js",
+      "PackagePath": "staticwebassets\\js\\TestPartial.js"
+    },
+    {
       "Id": "D:\\csharp\\RubiksCube\\RubiksCube.RazorPages\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

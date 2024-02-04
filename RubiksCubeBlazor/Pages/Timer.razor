@@ -1,0 +1,20 @@
+﻿<div>
+    <span id="a">0.000</span>
+</div>
+
+
+<script>
+    let T = null;
+    let IsPressed = false;
+    let S = new Date;
+    let up = onkeyup = e => {
+        if (up) {
+            S = new Date;
+            T = setInterval("a.innerHTML=(new Date-S)/1e3");
+        }
+        else { 
+            clearInterval(T);
+        }
+        up = !up;
+    }
+</script>

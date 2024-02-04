@@ -1,0 +1,11 @@
+﻿@page "{id}"
+@model RubiksCube.RazorPages.Pages.MySolves.SolveInfoModel
+
+
+<div class="container text-center justify-content-center">
+    <h3 class="text-center" style="font-size:larger">@Model.ScrambleModel.Scramble</h3>
+    <span class="text-center mb-5" style="font-size:medium">@Model.ScrambleModel.Time</span>
+    <partial name="_CubePartial.cshtml" model="@Model.ScrambleModel.CubeJson" />
+    <a asp-page="Delete" asp-route-id="@Model.ScrambleModel.Id" class="btn btn-danger">Delete</a>
+</div>
+

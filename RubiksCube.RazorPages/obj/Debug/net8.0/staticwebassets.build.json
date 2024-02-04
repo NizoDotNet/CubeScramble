@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pgGyUTuDytj8m6Y3CrmILVD/9KQ20Uyjh1HFm+fwsI4=",
+  "Hash": "WzcBOQNoeIkqWvQGywtcosFoPl8g0YQgjTna9nQUmlI=",
   "Source": "RubiksCube.RazorPages",
   "BasePath": "_content/RubiksCube.RazorPages",
   "Mode": "Default",
@@ -1345,6 +1345,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "D:\\csharp\\RubiksCube\\RubiksCube.RazorPages\\wwwroot\\js\\TestPartial.js",
+      "SourceId": "RubiksCube.RazorPages",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\csharp\\RubiksCube\\RubiksCube.RazorPages\\wwwroot\\",
+      "BasePath": "_content/RubiksCube.RazorPages",
+      "RelativePath": "js/TestPartial.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\TestPartial.js"
     },
     {
       "Identity": "D:\\csharp\\RubiksCube\\RubiksCube.RazorPages\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

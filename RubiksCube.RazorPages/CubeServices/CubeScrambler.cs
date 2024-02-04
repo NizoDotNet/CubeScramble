@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.Extensions.Options;
+using RubiksCube.RazorPages.Configuration;
 using RubiksCube.RazorPages.Model.DTOModels;
 
 namespace RubiksCube.RazorPages.CubeServices
@@ -8,9 +10,9 @@ namespace RubiksCube.RazorPages.CubeServices
         private readonly IMapper mapper;
         private ScrambleGenerator generator;
         private Scrambler scrambler;
-        public CubeScrambler(IMapper mapper, IConfiguration config)
+        public CubeScrambler(IMapper mapper, IOptions<CubeConfiguration> cubeConfigurations)
         {
-            generator = new ScrambleGenerator(int.Parse(config["ScrambleLength"]));
+            generator = new ScrambleGenerator(cubeConfigurations.Value.ScrambleLength);
             scrambler = new Scrambler();
             this.mapper = mapper;
         }

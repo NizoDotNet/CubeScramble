@@ -41,7 +41,7 @@ public class ScrambleRepository : IScrambleRepository
         }
     }
 
-    public ScrambleModel? GetScramble(int id)
+    public ScrambleModel GetScramble(int id)
     {
         return db.Scrambles.FirstOrDefault(c => c.Id == id);
     }

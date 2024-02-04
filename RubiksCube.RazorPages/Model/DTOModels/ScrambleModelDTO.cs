@@ -6,7 +6,6 @@ public class ScrambleModelDTO
 {
     public string Scramble { get; set; } = null!;
     public string Time { get; set; } = null!;
-
     public string CubeJson { get; set; } = null!;
     public string? SpeedCuberId { get; set; }
 }

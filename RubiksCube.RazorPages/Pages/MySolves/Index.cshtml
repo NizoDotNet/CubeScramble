@@ -5,10 +5,9 @@
     <div class="Scrambles ">
         @foreach(var i in Model.Scrambles)
         {
-            <li>
+            <a class="btn" asp-route-id="@i.Id" asp-page="/MySolves/SolveInfo">
                 @i.Time
-                <a class="btn btn-danger" asp-route-id="@i.Id" asp-page="/MySolves/Delete">Delete</a>
-            </li>
+            </a>
         }
         <img />
     </div>

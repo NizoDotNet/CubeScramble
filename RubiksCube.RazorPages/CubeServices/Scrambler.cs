@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace RubiksCube
 {
-    internal class Scrambler
+    internal class Scrambler 
     {
         public Cube cube { private get; set; }
+        
         public Scrambler() { }
         public Scrambler(Cube cube)
         {

@@ -8,7 +8,7 @@ namespace RubiksCube;
 
 public class ScrambleGenerator
 {
-    private int scrambleLength = 2;
+    public int scrambleLength = 2;
     public ScrambleGenerator() { }
     public ScrambleGenerator(int scrambleLength)
     {

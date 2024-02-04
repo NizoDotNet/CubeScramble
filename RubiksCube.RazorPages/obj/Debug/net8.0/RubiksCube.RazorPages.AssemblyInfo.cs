@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RubiksCube.RazorPages")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b39e481206c6c68ab57015436f166903b81a6f29")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cfc20133e8ce9bb2b8bd3d4efbb0601e8df2087b")]
 [assembly: System.Reflection.AssemblyProductAttribute("RubiksCube.RazorPages")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RubiksCube.RazorPages")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

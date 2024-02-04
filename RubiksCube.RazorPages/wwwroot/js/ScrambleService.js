@@ -7,12 +7,15 @@ let IsPressed = false;
 let S = new Date;
 let up = onkeyup = e => {
     if (up) {
+        scrambleEl.hidden = true;
         S = new Date;
         T = setInterval("a.innerHTML=(new Date-S)/1e3");
     }
     else {
         clearInterval(T);
         RecordScramble();
+        scrambleEl.hidden = false;
+        scrambleEl.style.displey = "block";
         cube = GetCube();
         ShowScramble();
     }
